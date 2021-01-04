@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mordern UI</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="viewport" scale="1" width = "device.width">
+</head>
+<body onload="load_list()">
+	<div class="container">
+		<section class="backdrop">
+			<div class="search_bar">
+				<div class="icon"></div>
+				<input type="text" name="Search" placeholder="Search Songs..." class="seach_input">
+			</div>
+			<div class="menu">
+				<ul class="songs_list" id="songs_list">
+				</ul>
+			</div>
+		</section>
+		<section class="frontdrop" id="frontdrop">
+			<div class="menu_btn" id="menu_btn" onclick="open_dash()"></div>
+			<div class="half_dial">
+				<img class="first_disk" id="first_disk" src="Images/album_cover.jpeg">
+				<img class="sec_disk" id="sec_disk" src="Images/lady_listening_music.jpg">
+				<img class="third_disk" id="third_disk" src="Images/mic-image.png">
+				<div class="small_half_dial"></div>
+			</div>
+			<div class="song_title_text">The title of the Song - 1998.mp3</div>
+			<div class="seek_bar">
+				<div class="fill"></div>
+			</div>
+			<div class="controls">
+				<ul>
+					<li class="previous"></li>
+					<li class="rewind"></li>
+					<li class="play" id="play_btn" onclick="play()"></li>
+					<li class="forward"></li>
+					<li class="next"></li>
+					<li class="loop"></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

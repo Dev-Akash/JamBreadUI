@@ -1,0 +1,254 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.container {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.backdrop {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	background: black;
+	color: white;
+}
+.backdrop .menu {
+	margin-top: 10px;
+}
+.backdrop .menu ul {
+	height: 89vh;
+	overflow: auto;
+	scroll-behavior: smooth;
+}
+.backdrop .menu li {
+	padding: 20px;
+	font-family: fantasy;
+	font-size: 21px;
+	transition: .5s;
+}
+.backdrop .menu li:hover {
+	background-color: rgba(255,255,255, 0.3);
+}
+.backdrop .search_bar {
+	width: 50%;
+	height: 50px;
+	display: flex;
+	margin-left: 255px;
+	margin-top: 5px;
+}
+.backdrop .search_bar .icon {
+	width: 40px;
+	height: 40px;
+	background: url("Images/search-white-18dp.svg");
+	margin: 5px;
+}
+.backdrop .search_bar input[type=text]{
+	width: 100%;
+	border-radius: 50px;
+	margin: 5px;
+	border: none;
+	outline: none;
+	font-family: fantasy;
+	font-size: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.frontdrop{
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background: pink;
+	transition: 1s;
+	overflow: hidden;
+}
+.frontdrop .menu_btn {
+	background: pink;
+	background-image: url("Images/menu-black-18dp.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 10px;
+	float: left;
+	transition: 1s;
+	box-shadow: 5px 5px 6px 0 rgba(0,0,0, 0.3), -5px -5px 6px 0 rgba(255, 255, 255, 0.5);
+}
+.frontdrop .half_dial{
+	position: fixed;
+	width: 750px;
+	height: 375px;
+	overflow: hidden;
+	margin-left: 50%;
+	background-color: white; /*#6AA121*/
+	border-radius: 0px 0px 500px 500px;
+	transform: translate(-50%);
+	box-shadow: 6px 6px 25px 0 rgba(0,0,0, 0.5) inset;
+}
+.frontdrop .half_dial::before {
+	content: "";
+	position: absolute;
+	width: 1500px;
+	height: 1500px;
+	background-color: #7f7fab; /*7f7fab*/
+	border-radius: 35%;
+	margin-left: 50%;
+	transform: translate(-50%, 0%);
+	animation: spin 180s linear infinite;
+}
+@keyframes spin {
+	0% {
+		transform: translate(-50%, 28%) rotate(0deg);
+	}
+	25%{
+		transform: translate(-50%, 20%) rotate(360deg);
+	}
+	50%{
+		transform: translate(-50%, 11%) rotate(0deg);
+	}
+	75%{
+		transform: translate(-50%, 5%) rotate(360deg);
+	}
+	100% {
+		transform: translate(-50%, -5%) rotate(0deg);
+	}
+}
+.frontdrop .half_dial .small_half_dial {
+	position: fixed;
+	width: 250px;
+	height: 125px;
+	background-color: pink;
+	border-radius: 0px 0px 500px 500px;
+	margin-left: 50%;
+	box-shadow: 6px 6px 20px 0 rgba(0,0,0, 0.5);
+	transform: translate(-50%);
+}
+.frontdrop .half_dial .first_disk{
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	margin-left: 50%;
+	margin-top: 40vh;
+	border-radius: 50%;
+	border: 15px solid pink;
+	box-shadow: 6px 6px 10px 0 rgba(0,0,0, 0.3), -6px -6px 10px 0 rgba(255,255,255, 0.5);
+	transform: translate(-50%, -50%);
+}
+.frontdrop .half_dial .sec_disk{
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	margin-left: 20%;
+	margin-top: 20vh;
+	border-radius: 50%;
+	border: 15px solid pink;
+	box-shadow: 6px 6px 10px 0 rgba(0,0,0, 0.3), -6px -6px 10px 0 rgba(255,255,255, 0.5);
+	transform: translate(-50%, -50%);
+}
+
+.frontdrop .half_dial .third_disk{
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	margin-left: 80%;
+	margin-top: 20vh;
+	border-radius: 50%;
+	border: 15px solid pink;
+	box-shadow: 6px 6px 10px 0 rgba(0,0,0, 0.3), -6px -6px 10px 0 rgba(255,255,255, 0.5);
+	transform: translate(-50%, -50%);
+}
+.frontdrop .song_title_text {
+	position: fixed;
+	width: 90%;
+	margin-left: 50%;
+	transform: translate(-50%);
+	margin-top: 66vh;
+	text-align: center;
+	font-family: fantasy;
+	font-size: 32px;
+	color: white;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.3), -3px -3px 3px rgba(255,255,255, 0.3);
+}
+.frontdrop .seek_bar{
+	position: fixed;
+	width: 90%;
+	height: 15px;
+	background: white;
+	margin-left: 50%;
+	margin-top: 80vh;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 5px 0 rgba(0,0,0, 0.3), -5px -5px 5px 0 rgba(255, 255, 255, 0.5);
+	transform: translate(-50%, -50%);
+}
+.frontdrop .seek_bar .fill{
+	width: 0%;
+	height: 10px;
+	position: fixed;
+	background: #7f7fab;
+	top: 50%;
+	transform: translate(0%, -50%);
+	margin-left: 2.5px;
+	margin-right: 2.5px;
+	border-radius: 5px;
+	animation: fill 180s linear infinite;
+}
+@keyframes fill{
+	from{
+		width: 0%;
+	}
+	to{
+		width: 99.5%;
+	}
+}
+.frontdrop .controls{
+	position: fixed;
+	width: 50%;
+	height: 50px;
+	background: white;
+	margin-left: 50%;
+	margin-top: 90vh;
+	border-radius: 50px 50px 50px 50px;
+	transform: translate(-50%, -50%);
+	box-shadow: 10px 10px 10px 0 rgba(0,0,0, 0.3), -8px -8px 10px 0 rgba(255,255,255, 0.5);
+}
+.frontdrop .controls ul {
+	position: fixed;
+	list-style: none;
+	display: flex;
+	width: 100%;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.frontdrop .controls ul li{
+	margin-left: auto;
+	margin-right: auto;
+	width: 40px;
+	height: 40px;
+}
+.play {
+	background-image: url("Images/play_arrow-white-18dp.svg");
+	background-position: center;
+}
+.previous{
+	background-image: url("Images/skip_previous-white-18dp.svg");
+	background-position: center;
+}
+.rewind{
+	background-image: url("Images/replay_10-white-18dp.svg");
+	background-position: center;
+}
+.forward{
+	background-image: url("Images/forward_10-24px.svg");
+	background-position: center;
+}
+.next{
+	background-image: url("Images/skip_next-white-18dp.svg");
+	background-position: center;
+}
+.loop{
+	background-image: url("Images/shuffle-white-18dp.svg");
+	background-position: center;
+}
